@@ -1,0 +1,68 @@
+/* ten by ten gradient grid */
+
+/* color a top left color b bottom right - webkit 90 180 // moz or no prefix 0 -90 */
+
+:root {
+/* RGB COLOR VARIABLES */
+/* high contrast best */
+--colora: 51, 51, 204; /*top left*/
+--colorb: 215, 179, 255; /*bottom right*/
+}
+
+.gradient-pattern {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 500px;
+  height: 500px;
+  border: none;
+  font: normal 1px/normal Arial, Helvetica, sans-serif;
+  color: rgba(255,255,255,1);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+
+/*each of the following background blocks - sets up a horiz and vert gradient of color A (top left)
+all of this is over the background color - color B (bottom right)*/
+/*note - 0 degrees is 12 o'clock, -90 degrees is 9 o'clock*/
+/*0 degree gradient - start darkest on top, lighter going down*/
+/*-90 degree gradient - start darkest on left, lighter going right*/
+/*to rotate your colors A and B, change the gradient directions - difference between the two is 90*/ 
+/*think of the gradient degree as the starting direction*/
+/*give the gradient distinct lines - 2 color stops (color plus distance or percentage) at the same place, first color dominates*/
+
+
+/*for general?*/
+  background: linear-gradient(0deg, 
+    rgba(var(--colora),0.0) 10%, rgba(var(--colora),0.05) 10%, 
+    rgba(var(--colora),0.05) 20%, rgba(var(--colora),0.1) 20%, 
+    rgba(var(--colora),0.1) 30%, rgba(var(--colora),0.2) 30%, 
+    rgba(var(--colora),0.2) 40%, rgba(var(--colora),0.3) 40%,
+    rgba(var(--colora),0.3) 50%, rgba(var(--colora),0.4) 50%, 
+    rgba(var(--colora),0.4) 60%, rgba(var(--colora),0.5) 60%, 
+    rgba(var(--colora),0.5) 70%, rgba(var(--colora),0.6) 70%, 
+    rgba(var(--colora),0.6) 80%, rgba(var(--colora),0.7) 80%,
+    rgba(var(--colora),0.7) 90%, rgba(var(--colora),0.8) 90%),
+
+  linear-gradient(-90deg, 
+    rgba(var(--colora),0.0) 10%, rgba(var(--colora),0.025) 10%, 
+    rgba(var(--colora),0.025) 20%, rgba(var(--colora),0.05) 20%, 
+    rgba(var(--colora),0.05) 30%, rgba(var(--colora),0.1) 30%, 
+    rgba(var(--colora),0.1) 40%, rgba(var(--colora),0.2) 40%,
+    rgba(var(--colora),0.2) 50%, rgba(var(--colora),0.3) 50%, 
+    rgba(var(--colora),0.3) 60%, rgba(var(--colora),0.4) 60%, 
+    rgba(var(--colora),0.4) 70%, rgba(var(--colora),0.5) 70%, 
+    rgba(var(--colora),0.5) 80%, rgba(var(--colora),0.6) 80%,
+    rgba(var(--colora),0.6) 90%, rgba(var(--colora),0.7) 90%),
+
+  rgb(var(--colorb)); /*this is the bottom right color*/
+
+  /*end gradient set up*/
+
+  background-position: auto auto;
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
